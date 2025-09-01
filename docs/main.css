@@ -119,3 +119,160 @@ h3 {
   top:0;
   z-index: 10;
 }
+/* --- Responsive Mobile Fixes (added by Kilo Code) --- */
+@media (max-width: 800px) {
+  .wikidoc {
+    width: 100% !important;
+    margin: 0 !important;
+    float: none !important;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  body {
+    padding: 0 !important;
+  }
+  a[style*="padding: 12px"], a[style*="padding: 15px"] {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    margin: 8px 0 !important;
+    text-align: center !important;
+    font-size: 1.1em;
+  }
+  table, th, td {
+    font-size: 14px !important;
+    word-break: break-word;
+  }
+  pre, code {
+    font-size: 13px !important;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+/* --- Erweiterte Responsive Mobile Fixes (Kilo Code, nach User-Feedback) --- */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .wikidoc {
+    width: 100% !important;
+    margin: 0 !important;
+    float: none !important;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  body {
+    padding: 0 !important;
+    margin: 0;
+    overflow-x: hidden;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  h1 { font-size: 1.8em; }
+  h2 { font-size: 1.6em; }
+  h3 { font-size: 1.4em; }
+  h4 { font-size: 1.2em; }
+  p, li, td {
+    font-size: 14px !important;
+    line-height: 1.4;
+  }
+  a[style*="padding: 12px"], a[style*="padding: 15px"] {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    margin: 8px 0 !important;
+    text-align: center !important;
+    font-size: 1.1em;
+    min-height: 44px;
+  }
+  a, button, input[type="button"], input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 16px;
+    margin: 4px 0;
+    display: inline-block;
+    text-align: center;
+  }
+  a + a, button + button {
+    margin-top: 8px;
+  }
+  .fixed-nav {
+    position: static;
+    width: 100%;
+  }
+  .left, .right {
+    display: none !important;
+  }
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 10px auto;
+  }
+  iframe, embed, object {
+    max-width: 100%;
+    height: auto;
+  }
+  table {
+    width: 100%;
+    font-size: 12px !important;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 8px 4px !important;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  pre, code {
+    font-size: 13px !important;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  /* Stack table cells vertically on very small screens */
+  @media (max-width: 480px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+    th {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    tr {
+      border: 1px solid var(--border);
+      margin-bottom: 10px;
+    }
+    td {
+      border: none;
+      position: relative;
+      padding-left: 50%;
+    }
+    td:before {
+      content: attr(data-label) ": ";
+      position: absolute;
+      left: 6px;
+      width: 45%;
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px to 768px) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .wikidoc {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .left, .right {
+    display: none !important;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px to 992px) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .wikidoc {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
