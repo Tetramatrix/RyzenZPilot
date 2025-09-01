@@ -124,25 +124,29 @@ iframe, embed, object {
   width: 100% !important;
 }
 
-/* Tabellen auf sehr kleinen Screens stapeln */
+/* === Mobile Table Stacking (up to 480px) === */
 @media (max-width: 480px) {
   table, thead, tbody, th, td, tr {
     display: block;
   }
+
   th {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
+
   tr {
     border: 1px solid var(--border);
     margin-bottom: 10px;
   }
+
   td {
     border: none;
     position: relative;
     padding-left: 50%;
   }
+
   td:before {
     content: attr(data-label) ": ";
     position: absolute;
@@ -158,11 +162,13 @@ iframe, embed, object {
   body {
     font-size: 15px;
   }
+
   .wikidoc {
     width: 90%;
     margin: 0 auto;
     padding: 20px;
   }
+
   table, th, td {
     font-size: 14px;
   }
@@ -175,12 +181,14 @@ iframe, embed, object {
     margin-left: 180px;
     float: left;
   }
+
   .left, .right {
     display: block !important;
     float: left;
     position: static;
     width: auto;
   }
+
   .fixed-nav {
     display: block !important;
     position: fixed !important;
