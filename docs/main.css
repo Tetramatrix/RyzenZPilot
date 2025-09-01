@@ -124,6 +124,12 @@ iframe, embed, object {
   width: 100% !important;
 }
 
+/* FIX: Ensure the main content area (.wikidoc) is always visible,
+   overriding the display:none from .left, .right, etc. if they are on the same element. */
+.wikidoc {
+  display: block !important;
+}
+
 /* === Mobile Table Stacking (up to 480px) === */
 @media (max-width: 480px) {
   table, thead, tbody, th, td, tr {
@@ -176,17 +182,32 @@ iframe, embed, object {
 
 /* === Desktop-Styles (ab 769px) === */
 @media only screen and (min-width: 769px) {
-  .wikidoc {
-    width: 700px;
-    margin-left: 180px;
-    float: left;
+  /* Use CSS variables for layout dimensions to improve maintainability.
+     You can easily adjust sidebar widths here. */
+  :root {
+    --left-sidebar-width: 180px;
+    --right-sidebar-width: 240px; /* A reasonable default, adjust as needed */
+    --content-gutter: 20px;
   }
 
-  .left, .right {
+  .wikidoc {
+    /* Make content fluid between the sidebars */
+    width: auto;
+    margin-left: calc(var(--left-sidebar-width) + var(--content-gutter));
+    margin-right: calc(var(--right-sidebar-width) + var(--content-gutter));
+    float: none; /* The content column doesn't need to float anymore */
+  }
+
+  .left {
     display: block !important;
     float: left;
-    position: static;
-    width: auto;
+    width: var(--left-sidebar-width);
+  }
+
+  .right {
+    display: block !important;
+    float: right; /* FIX: Float right to place it on the right side */
+    width: var(--right-sidebar-width);
   }
 
   .fixed-nav {
@@ -194,14 +215,16 @@ iframe, embed, object {
     position: fixed !important;
     top: 0;
     z-index: 10;
+    width: var(--left-sidebar-width); /* Ensure fixed nav has correct width */
   }
 }
 
 /* === Große Desktops (ab 1100px) === */
 @media (min-width: 1100px) {
   .right {
+    /* On large screens, make the right sidebar 'sticky' */
     position: fixed;
-    top: 0px;
-    left: 1000px;
+    top: 0;
+    right: 0; /* Anchor it to the right side of the viewport */
   }
 }
