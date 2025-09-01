@@ -1,21 +1,24 @@
 :root {
-  --bg-primary: #1e1e1e;        /* Main dark background */
-  --bg-secondary: #2d2d30;      /* Card/section backgrounds */
-  --bg-accent: #0f3460;         /* AMD blue accent areas */
-  --text-primary: #ffffff;      /* Main text */
-  --text-secondary: #cccccc;    /* Secondary text */
-  --accent-blue: #0078d4;       /* Microsoft blue */
-  --accent-amd: #ed1c24;        /* AMD red for highlights */
-  --border: #404040;            /* Subtle borders */
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #2d2d30;
+  --bg-accent: #0f3460;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --accent-blue: #0078d4;
+  --accent-amd: #ed1c24;
+  --border: #404040;
 }
 
-
+/* === Mobile-First Basis-Styles === */
 body {
   font-family: "Arial", Verdana, sans-serif;
-  font-size: 16px;
-  padding: 0px;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 10px;
+  margin: 0;
   background: var(--bg-primary);
   color: var(--text-primary);
+  overflow-x: hidden;
 }
 
 a, a:visited {
@@ -24,255 +27,173 @@ a, a:visited {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary);
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
 }
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.2em; }
 
-.wikidoc, .wikidoc pre, .wikidoc code {
+.wikidoc {
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  float: none;
+  box-sizing: border-box;
   background: var(--bg-secondary);
   color: var(--text-primary);
+  clear: both;
 }
 
-pre, code {
+pre, code, .wikidoc pre, .wikidoc code {
   background: var(--bg-secondary);
   color: var(--accent-blue);
   border-radius: 5px;
-}
-
-div[style*="background: #f0f0f0"], div[style*="background: #f8f9fa"], pre[style*="background: #f0f0f0"], table {
-  background: var(--bg-secondary) !important;
-  color: var(--text-primary) !important;
+  font-size: 13px;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 table, th, td {
+  width: 100%;
+  font-size: 12px;
   border: 1px solid var(--border);
+  border-collapse: collapse;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  word-break: break-word;
+  hyphens: auto;
 }
-
 th {
   background: var(--bg-accent);
   color: var(--text-primary);
+  padding: 8px 4px;
 }
-
 td {
   background: var(--bg-secondary);
   color: var(--text-secondary);
+  padding: 8px 4px;
 }
 
 a[style*="background: #ff4444"] {
   background: var(--accent-amd) !important;
   color: #fff !important;
 }
-
 a[style*="background: #44ff44"] {
   background: var(--accent-blue) !important;
   color: #fff !important;
 }
-
 a[style*="background: linear-gradient"] {
   background: linear-gradient(135deg, var(--accent-blue) 0%, var(--bg-accent) 100%) !important;
   color: #fff !important;
 }
 
-
-h3 {
-	margin-bottom:0px;
-	font-weight:bolder;
-}
-@media (min-width: 940px)  {
-	.left {
-			/* transform: translate3d(0,0,0); */
-			overflow:hidden;
-			/*position:fixed;
-			top:0px;
-			left:0px; */
-			padding-right:30px;
-			float:left;
-	}
-}
-@media (max-width: 939px)  {
-	.left {
-		display:none;
-	}
-}
-@media (min-width: 1100px)  { /* right column */
-	.right {
-		/* transform: translate3d(0,0,0); */
-		overflow:hidden;
-		position:fixed;
-		top:0px;
-		left:1000px;
-	}
+/* Touchfreundliche Buttons/Links */
+a[style*="padding: 12px"], a[style*="padding: 15px"], a, button, input[type="button"], input[type="submit"] {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  margin: 8px 0;
+  text-align: center;
+  font-size: 1.1em;
+  padding: 12px 16px;
 }
 
-@media (max-width: 1099px)  { /* right column */
-	.right {
-		display:none;
-	}
+a + a, button + button {
+  margin-top: 8px;
 }
 
-.wikidoc {
-	float:left;
-	width:700px;
-	margin-left:180px;
+/* Bilder und Medien responsiv */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 10px auto;
+}
+iframe, embed, object {
+  max-width: 100%;
+  height: auto;
 }
 
-.fixed-nav {
-  position: fixed;
-  top:0;
-  z-index: 10;
+/* Sidebars und Fixed-Elemente auf Mobile ausblenden */
+.left, .right, .fixed-nav {
+  display: none !important;
+  position: static !important;
+  width: 100% !important;
 }
-/* --- Responsive Mobile Fixes (added by Kilo Code) --- */
-@media (max-width: 800px) {
-  .wikidoc {
-    width: 100% !important;
-    margin: 0 !important;
-    float: none !important;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  body {
-    padding: 0 !important;
-  }
-  a[style*="padding: 12px"], a[style*="padding: 15px"] {
-    display: block !important;
-    width: 100% !important;
-    box-sizing: border-box;
-    margin: 8px 0 !important;
-    text-align: center !important;
-    font-size: 1.1em;
-  }
-  table, th, td {
-    font-size: 14px !important;
-    word-break: break-word;
-  }
-  pre, code {
-    font-size: 13px !important;
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
-}
-/* --- Erweiterte Responsive Mobile Fixes (Kilo Code, nach User-Feedback) --- */
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .wikidoc {
-    width: 100% !important;
-    margin: 0 !important;
-    float: none !important;
-    padding: 15px;
-    box-sizing: border-box;
-  }
-  body {
-    padding: 0 !important;
-    margin: 0;
-    overflow-x: hidden;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  h1 { font-size: 1.8em; }
-  h2 { font-size: 1.6em; }
-  h3 { font-size: 1.4em; }
-  h4 { font-size: 1.2em; }
-  p, li, td {
-    font-size: 14px !important;
-    line-height: 1.4;
-  }
-  a[style*="padding: 12px"], a[style*="padding: 15px"] {
-    display: block !important;
-    width: 100% !important;
-    box-sizing: border-box;
-    margin: 8px 0 !important;
-    text-align: center !important;
-    font-size: 1.1em;
-    min-height: 44px;
-  }
-  a, button, input[type="button"], input[type="submit"] {
-    min-height: 44px;
-    min-width: 44px;
-    padding: 12px 16px;
-    margin: 4px 0;
-    display: inline-block;
-    text-align: center;
-  }
-  a + a, button + button {
-    margin-top: 8px;
-  }
-  .fixed-nav {
-    position: static;
-    width: 100%;
-  }
-  .left, .right {
-    display: none !important;
-  }
-  img {
-    max-width: 100% !important;
-    height: auto !important;
+/* Tabellen auf sehr kleinen Screens stapeln */
+@media (max-width: 480px) {
+  table, thead, tbody, th, td, tr {
     display: block;
-    margin: 10px auto;
   }
-  iframe, embed, object {
-    max-width: 100%;
-    height: auto;
+  th {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
   }
-  table {
-    width: 100%;
-    font-size: 12px !important;
-    border-collapse: collapse;
+  tr {
+    border: 1px solid var(--border);
+    margin-bottom: 10px;
   }
-  th, td {
-    padding: 8px 4px !important;
-    word-break: break-word;
-    hyphens: auto;
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
   }
-  pre, code {
-    font-size: 13px !important;
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
-  /* Stack table cells vertically on very small screens */
-  @media (max-width: 480px) {
-    table, thead, tbody, th, td, tr {
-      display: block;
-    }
-    th {
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
-    }
-    tr {
-      border: 1px solid var(--border);
-      margin-bottom: 10px;
-    }
-    td {
-      border: none;
-      position: relative;
-      padding-left: 50%;
-    }
-    td:before {
-      content: attr(data-label) ": ";
-      position: absolute;
-      left: 6px;
-      width: 45%;
-      text-align: left;
-      font-weight: bold;
-    }
+  td:before {
+    content: attr(data-label) ": ";
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    text-align: left;
+    font-weight: bold;
   }
 }
 
-/* Small devices (portrait tablets and large phones, 600px to 768px) */
-@media only screen and (min-width: 601px) and (max-width: 768px) {
+/* === Tablet-Styles (ab 601px) === */
+@media only screen and (min-width: 601px) {
+  body {
+    font-size: 15px;
+  }
   .wikidoc {
     width: 90%;
     margin: 0 auto;
     padding: 20px;
   }
-  .left, .right {
-    display: none !important;
+  table, th, td {
+    font-size: 14px;
   }
 }
 
-/* Medium devices (landscape tablets, 768px to 992px) */
-@media only screen and (min-width: 769px) and (max-width: 992px) {
+/* === Desktop-Styles (ab 769px) === */
+@media only screen and (min-width: 769px) {
   .wikidoc {
-    width: 80%;
-    margin: 0 auto;
+    width: 700px;
+    margin-left: 180px;
+    float: left;
+  }
+  .left, .right {
+    display: block !important;
+    float: left;
+    position: static;
+    width: auto;
+  }
+  .fixed-nav {
+    display: block !important;
+    position: fixed !important;
+    top: 0;
+    z-index: 10;
+  }
+}
+
+/* === Große Desktops (ab 1100px) === */
+@media (min-width: 1100px) {
+  .right {
+    position: fixed;
+    top: 0px;
+    left: 1000px;
   }
 }
