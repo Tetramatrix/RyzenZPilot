@@ -7,12 +7,9 @@
   --accent-blue: #0078d4;
   --accent-amd: #ed1c24;
   --border: #404040;
-  --left-sidebar-width: 180px;
-  --right-sidebar-width: 240px;
-  --content-gutter: 20px;
 }
 
-/* === Mobile-First Base Styles === */
+/* === Mobile-First Basis-Styles === */
 body {
   font-family: "Arial", Verdana, sans-serif;
   font-size: 14px;
@@ -22,8 +19,6 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
-  /* Single column layout for mobile */
-  display: block;
 }
 
 a, a:visited {
@@ -40,25 +35,15 @@ h2 { font-size: 1.6em; }
 h3 { font-size: 1.4em; }
 h4 { font-size: 1.2em; }
 
-/* Main content container */
 .wikidoc {
   width: 100%;
   margin: 0 auto;
   padding: 15px;
+  float: none;
   box-sizing: border-box;
   background: var(--bg-secondary);
   color: var(--text-primary);
-  display: block !important; /* Always visible */
-}
-
-/* Hide sidebars on mobile */
-.left, .right {
-  display: none !important;
-}
-
-/* Fixed navigation hidden on mobile */
-.fixed-nav {
-  display: none !important;
+  clear: both;
 }
 
 pre, code, .wikidoc pre, .wikidoc code {
@@ -70,8 +55,7 @@ pre, code, .wikidoc pre, .wikidoc code {
   word-break: break-word;
 }
 
-/* Responsive tables */
-table {
+table, th, td {
   width: 100%;
   font-size: 12px;
   border: 1px solid var(--border);
@@ -81,25 +65,17 @@ table {
   word-break: break-word;
   hyphens: auto;
 }
-
-th, td {
-  border: 1px solid var(--border);
-  padding: 8px 4px;
-  word-break: break-word;
-  hyphens: auto;
-}
-
 th {
   background: var(--bg-accent);
   color: var(--text-primary);
+  padding: 8px 4px;
 }
-
 td {
   background: var(--bg-secondary);
   color: var(--text-secondary);
+  padding: 8px 4px;
 }
 
-/* Button styling overrides */
 a[style*="background: #ff4444"] {
   background: var(--accent-amd) !important;
   color: #fff !important;
@@ -113,12 +89,8 @@ a[style*="background: linear-gradient"] {
   color: #fff !important;
 }
 
-/* Touch-friendly buttons/links for mobile */
-a[style*="padding: 12px"], 
-a[style*="padding: 15px"], 
-a, button, 
-input[type="button"], 
-input[type="submit"] {
+/* Touchfreundliche Buttons/Links */
+a[style*="padding: 12px"], a[style*="padding: 15px"], a, button, input[type="button"], input[type="submit"] {
   display: block;
   width: 100%;
   min-height: 44px;
@@ -133,17 +105,29 @@ a + a, button + button {
   margin-top: 8px;
 }
 
-/* Responsive images and media */
+/* Bilder und Medien responsiv */
 img {
   max-width: 100% !important;
   height: auto !important;
   display: block;
   margin: 10px auto;
 }
-
 iframe, embed, object {
   max-width: 100%;
   height: auto;
+}
+
+/* Sidebars und Fixed-Elemente auf Mobile ausblenden */
+.left, .right, .fixed-nav {
+  display: none !important;
+  position: static !important;
+  width: 100% !important;
+}
+
+/* FIX: Ensure the main content area (.wikidoc) is always visible,
+   overriding the display:none from .left, .right, etc. if they are on the same element. */
+.wikidoc {
+  display: block !important;
 }
 
 /* === Mobile Table Stacking (up to 480px) === */
@@ -179,11 +163,10 @@ iframe, embed, object {
   }
 }
 
-/* === Tablet Styles (601px - 768px) === */
-@media only screen and (min-width: 601px) and (max-width: 768px) {
+/* === Tablet-Styles (ab 601px) === */
+@media only screen and (min-width: 601px) {
   body {
     font-size: 15px;
-    padding: 15px;
   }
 
   .wikidoc {
@@ -196,123 +179,70 @@ iframe, embed, object {
     font-size: 14px;
   }
 
-  /* Reset table layout for tablets */
-  table, thead, tbody, th, td, tr {
-    display: table;
-  }
-  
+  /* FIX: Reset table cell width for traditional table layout.
+     The mobile-first style sets td width to 100% for stacking,
+     which needs to be undone for wider screens. */
   th, td {
-    display: table-cell;
     width: auto;
-  }
-
-  /* Still hide sidebars on tablets */
-  .left, .right, .fixed-nav {
-    display: none !important;
   }
 }
 
-/* === Desktop Styles (769px and up) === */
+/* === Desktop-Styles (ab 769px) === */
+/* REFACTOR: Replaced float layout with a modern, robust CSS Grid layout.
+   This is the ideal tool for creating multi-column page layouts. */
 @media only screen and (min-width: 769px) {
+  :root {
+    --left-sidebar-width: 180px;
+    --right-sidebar-width: 240px;
+    --content-gutter: 20px;
+  }
+
   body {
-    font-size: 16px;
-    padding: 0;
-    /* Grid layout with 3 columns */
     display: grid;
+    /* Define 3 columns: left sidebar, flexible content, right sidebar */
     grid-template-columns: var(--left-sidebar-width) 1fr var(--right-sidebar-width);
-    grid-template-areas: "left-sidebar main-content right-sidebar";
     grid-gap: var(--content-gutter);
-    min-height: 100vh;
   }
 
-  /* Main content area */
   .wikidoc {
-    grid-area: main-content;
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 30px;
-    justify-self: center;
+    /* The content will live in the center column defined by the grid */
+    max-width: 800px; /* Enforce the maximum content width */
+    justify-self: center; /* Center the content within its grid column on wide screens */
+    width: 100%; /* Ensure it fills its column up to the max-width */
+    margin: 0; /* Reset margins used for float layout */
   }
 
-  /* Left sidebar */
   .left {
-    grid-area: left-sidebar;
     display: block !important;
-    padding: 20px 10px;
-    background: var(--bg-primary); /* Darker background to distinguish from main content */
-    border-right: 1px solid var(--border);
   }
 
-  /* Right sidebar */
   .right {
-    grid-area: right-sidebar;
     display: block !important;
-    padding: 20px 10px;
-    background: var(--bg-primary); /* Darker background to distinguish from main content */
-    border-left: 1px solid var(--border);
   }
 
-  /* Fixed navigation */
   .fixed-nav {
+    /* position:fixed takes this element out of the grid flow, which is correct. */
     display: block !important;
-    position: fixed;
+    position: fixed !important;
     top: 0;
-    left: 0;
+    z-index: 10;
     width: var(--left-sidebar-width);
-    z-index: 1000;
-    background: var(--bg-primary); /* Match left sidebar background */
-    padding: 10px;
-    border-right: 1px solid var(--border);
-  }
-
-  /* Reset button styles for desktop */
-  a, button, input[type="button"], input[type="submit"] {
-    display: inline-block;
-    width: auto;
-    min-height: auto;
-    margin: 0 5px 5px 0;
-    padding: 8px 16px;
-    font-size: 1em;
-  }
-
-  /* Reset table layout completely for desktop */
-  table, thead, tbody, th, td, tr {
-    display: table;
-  }
-  
-  th, td {
-    display: table-cell;
-    width: auto;
-  }
-  
-  table, th, td {
-    font-size: 14px;
-  }
-
-  /* Remove mobile table pseudo-elements */
-  td:before {
-    display: none;
   }
 }
 
-/* === Large Desktop Styles (1100px and up) === */
+/* === Große Desktops (ab 1100px) === */
 @media (min-width: 1100px) {
-  body {
-    /* Adjust grid for larger screens */
-    grid-template-columns: var(--left-sidebar-width) 1fr var(--right-sidebar-width);
-    max-width: 1400px;
-    margin: 0 auto;
+  .right {
+    /* On large screens, make the right sidebar 'sticky' */
+    position: fixed;
+    top: 0px;
+    right: 0;
   }
 
-  .wikidoc {
-    padding: 40px;
-  }
-}
-
-/* === Very Large Screens (1400px and up) === */
-@media (min-width: 1400px) {
+  /* When right sidebar is fixed, it leaves the grid. Redefine the grid to 2 columns
+     and add padding to the body to avoid content overlapping the fixed sidebar. */
   body {
-    padding: 0 20px;
+    grid-template-columns: var(--left-sidebar-width) 1fr;
+    padding-right: calc(var(--right-sidebar-width) + var(--content-gutter));
   }
 }
