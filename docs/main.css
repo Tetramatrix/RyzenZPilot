@@ -118,10 +118,14 @@ iframe, embed, object {
 }
 
 /* Sidebars und Fixed-Elemente auf Mobile ausblenden */
-.left, .right, .fixed-nav {
-  display: none !important;
-  position: static !important;
-  width: 100% !important;
+/* Standardmäßig: Sidebars ausblenden (Mobile-First) */
+/* Sidebars und Fixed-Nav werden nur auf kleinen Bildschirmen ausgeblendet */
+@media (max-width: 768px) {
+  .left, .right, .fixed-nav {
+    display: none !important;
+    position: static !important;
+    width: 100% !important;
+  }
 }
 
 /* FIX: Ensure the main content area (.wikidoc) is always visible,
@@ -192,21 +196,22 @@ iframe, embed, object {
    This is the ideal tool for creating multi-column page layouts. */
 @media only screen and (min-width: 769px) {
   :root {
-    --left-sidebar-width: 180px;
-    --right-sidebar-width: 240px;
-    --content-gutter: 20px;
+    --left-sidebar-width: 120px;
+    --right-sidebar-width: 160px;
+    --content-gutter: 16px;
   }
 
   body {
     display: grid;
     /* Define 3 columns: left sidebar, flexible content, right sidebar */
-    grid-template-columns: var(--left-sidebar-width) 1fr var(--right-sidebar-width);
+    grid-template-columns: minmax(var(--left-sidebar-width), 1fr) minmax(480px, 1.5fr) minmax(var(--right-sidebar-width), 1fr);
     grid-gap: var(--content-gutter);
   }
 
   .wikidoc {
     /* The content will live in the center column defined by the grid */
-    max-width: 800px; /* Enforce the maximum content width */
+    max-width: 900px; /* Enforce the maximum content width */
+    min-width: 480px; /* Ensure minimum readable width */
     justify-self: center; /* Center the content within its grid column on wide screens */
     width: 100%; /* Ensure it fills its column up to the max-width */
     margin: 0; /* Reset margins used for float layout */
@@ -232,6 +237,11 @@ iframe, embed, object {
 
 /* === Große Desktops (ab 1100px) === */
 @media (min-width: 1100px) {
+  :root {
+    --left-sidebar-width: 180px;
+    --right-sidebar-width: 240px;
+    --content-gutter: 20px;
+  }
   .right {
     /* On large screens, make the right sidebar 'sticky' */
     position: fixed;
