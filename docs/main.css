@@ -7,6 +7,20 @@
   --accent-blue: #0078d4;
   --accent-amd: #ed1c24;
   --border: #404040;
+
+  /* Custom Component Colors */
+  --black: #000;
+  --border-light: #444;
+  --border-medium: #555;
+  --shadow-color-light: rgba(0, 0, 0, 0.1);
+  --shadow-color-medium: rgba(0, 0, 0, 0.15);
+  --btn-primary-bg: #4444ff;
+  --code-bg-purple: #510370;
+  --code-bg-highlight: rgba(0, 0, 0, 0.3);
+  --code-text-highlight: #68d391;
+  --table-row-alt-bg: #3a3a3d;
+  --cta-gradient-start: #667eea;
+  --cta-gradient-end: #764ba2;
 }
 
 /* === Mobile-First Basis-Styles === */
@@ -78,15 +92,15 @@ td {
 
 a[style*="background: #ff4444"] {
   background: var(--accent-amd) !important;
-  color: #fff !important;
+  color: var(--text-primary) !important;
 }
 a[style*="background: #44ff44"] {
   background: var(--accent-blue) !important;
-  color: #fff !important;
+  color: var(--text-primary) !important;
 }
 a[style*="background: linear-gradient"] {
   background: linear-gradient(135deg, var(--accent-blue) 0%, var(--bg-accent) 100%) !important;
-  color: #fff !important;
+  color: var(--text-primary) !important;
 }
 
 /* Touchfreundliche Buttons/Links */
@@ -255,4 +269,162 @@ iframe, embed, object {
     grid-template-columns: var(--left-sidebar-width) 1fr;
     padding-right: calc(var(--right-sidebar-width) + var(--content-gutter));
   }
+}
+
+/* === Custom Component & Page-Specific Styles === */
+
+/* Sidebar Spacing */
+.left-sidebar-ad-spacing {
+  padding-top: 10px;
+}
+.right-sidebar-ad-container {
+  margin-top: 20px;
+}
+
+/* Ads */
+.ad-in-article-fluid {
+  display: block;
+  text-align: center;
+}
+.ad-in-article-spaced {
+  display: block;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Logo & Screenshots */
+.logo {
+  max-width: 200px;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+.screenshot {
+  border: 1px solid var(--border-light); /* Dark theme friendly border */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow-color-light);
+  margin: 20px 0;
+}
+
+/* Video */
+.video-container {
+  text-align: center;
+  margin: 30px 0;
+}
+.video-player {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--border-medium); /* Dark theme friendly border */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px var(--shadow-color-medium);
+  background: var(--black);
+}
+.caption {
+  margin-top: 15px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* Download Sections & Buttons */
+.download-section {
+  text-align: center;
+  margin: 20px 0;
+}
+.btn {
+  display: inline-block;
+  width: auto;
+  min-height: auto;
+  text-decoration: none;
+  color: var(--text-primary) !important; /* Ensure color overrides 'a' tag styles */
+  margin: 5px;
+  border-radius: 5px;
+}
+.btn-primary {
+  background: var(--btn-primary-bg);
+  padding: 12px 24px;
+}
+.btn-large {
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px;
+}
+
+/* Code Blocks */
+.code-block-md5 {
+  background: var(--code-bg-purple);
+  padding: 10px;
+  border-radius: 5px;
+}
+.code-block-md5-highlight {
+  background: var(--code-bg-highlight);
+  color: var(--code-text-highlight);
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* Feature Comparison Table */
+.feature-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+.feature-table th, .feature-table td {
+  padding: 12px;
+  border: 1px solid var(--border);
+  width: auto;
+}
+.feature-table td {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+.feature-table .row-alt td {
+  background: var(--table-row-alt-bg); /* Slightly lighter than bg-secondary */
+  color: var(--text-primary);
+}
+
+/* Call to Action Box */
+.cta-box {
+  text-align: center;
+  margin: 40px 0;
+  background: linear-gradient(135deg, var(--cta-gradient-start) 0%, var(--cta-gradient-end) 100%);
+  color: var(--text-primary);
+  padding: 30px;
+  border-radius: 15px;
+}
+.cta-box p {
+  font-size: 18px;
+  margin: 15px 0;
+  color: var(--text-primary);
+}
+
+/* Donations & Embeds */
+.qr-code {
+  width: 130px;
+  height: 130px;
+  vertical-align: middle;
+  margin-left: 10px;
+  display: inline-block;
+}
+.embed-container {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.embed-item {
+  margin-bottom: 20px;
+}
+.embed-iframe {
+  max-width: 100%;
+  border: none;
+}
+
+/* Footer */
+.footer-text {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 40px;
 }
