@@ -6,11 +6,8 @@ for optimal performance and efficiency.
 
 Website: http://tetramatrix.github.io/RyzenZPilot
 
-Community: Join discussions on Reddit at /r/RyzenZPilot
-
 Downloads:
 - Latest version: RyzenZPilot-v3.1.1.zip
-- Torrent: RyzenZPilot-v3.1.1.torrent
 - MD5 Checksum: 801971e227723d9a0858a180414c2a3c
 - Download: http://tetramatrix.github.io/RyzenZPilot
 
