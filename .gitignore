@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Web / Frontend
+node_modules/
+dist/
+build/
+.next/
+.nuxt/
+out/
+.vercel/
+.netlify/
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS / System
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# Env / Secrets
+.env
+.env.*
+!.env.example
+
+# Logs / Temp
+*.log
+*.tmp
+*.pid
+*.seed
+*.pid.lock
+
+# Testing / Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+
+# Project-specific
+.kilo/
+.sorana/
+
+# Misc
+*.tar.gz
+*.zip
+*.rar
