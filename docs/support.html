@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6449563648591184"
+     crossorigin="anonymous"></script>
+
+  <title>RyzenZPilot: Support &amp; Donate</title>
+<meta name="description" content="Support RyzenZPilot. Join the Discord community, leave a review, or donate via PayPal or Bitcoin Cash.">
+  <link rel="icon" type="image/png" href="RyzenZPilot.png">
+  <link rel="canonical" href="https://tetramatrix.github.io/RyzenZPilot/support.html">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0e0f11">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<script>
+  (function(){
+    var stored=localStorage.getItem('theme');
+    if(stored){document.documentElement.setAttribute('data-theme',stored);}
+    else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){
+      document.documentElement.setAttribute('data-theme','light');
+    }
+  })();
+</script>
+
+<style>
+:root, [data-theme="dark"] {
+  --color-bg:             #0e0f11;
+  --color-surface:        #141618;
+  --color-surface-2:      #1a1c1f;
+  --color-surface-3:      #202226;
+  --color-border:         rgba(255,255,255,0.08);
+  --color-text:           #e8eaed;
+  --color-text-muted:     #8a8f98;
+  --color-text-faint:     #4a4f58;
+  --color-primary:        #ed1c24;
+  --color-primary-hover:  #c4181e;
+  --color-primary-dim:    rgba(237,28,36,0.12);
+  --color-free:           #f59e0b;
+  --color-free-dim:       rgba(245,158,11,0.12);
+
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+  --text-hero: clamp(2rem, 1rem + 3vw, 3.5rem);
+
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+  --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
+  --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+  --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+
+  --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.75rem;
+  --radius-xl: 1rem; --radius-2xl: 1.5rem; --radius-full: 9999px;
+}
+
+[data-theme="light"] {
+  --color-bg:             #f9fafb;
+  --color-surface:        #ffffff;
+  --color-surface-2:      #f3f4f6;
+  --color-surface-3:      #e5e7eb;
+  --color-border:         rgba(0,0,0,0.08);
+  --color-text:           #111827;
+  --color-text-muted:     #6b7280;
+  --color-text-faint:     #9ca3af;
+  --color-primary:        #dc2626;
+  --color-primary-hover:  #b91c1c;
+  --color-primary-dim:    rgba(220,38,38,0.1);
+  --color-free:           #d97706;
+  --color-free-dim:       rgba(217,119,6,0.1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; height: auto; }
+ul { list-style: none; }
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { color: var(--color-primary-hover); }
+
+/* ── NAV ── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--color-bg) 90%, transparent);
+  backdrop-filter: blur(12px);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  text-decoration: none;
+}
+.nav-links { display: flex; align-items: center; gap: var(--space-6); }
+.nav-links a {
+  color: var(--color-text-muted); text-decoration: none;
+  font-size: var(--text-sm); transition: color 160ms ease;
+}
+.nav-links a:hover { color: var(--color-text); }
+.nav-links .btn-primary {
+  color: #fff;
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  border: none; cursor: pointer;
+  text-decoration: none;
+  transition: background 160ms ease, transform 120ms ease;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--color-primary-hover); transform: translateY(-1px); color: #fff; }
+.btn-outline {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 160ms ease, background 160ms ease;
+  display: inline-block;
+}
+.btn-outline:hover { border-color: var(--color-primary); background: var(--color-primary-dim); }
+
+/* ── HERO ── */
+.hero {
+  padding: clamp(var(--space-16), 10vw, var(--space-24)) var(--space-8);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: var(--space-6);
+  letter-spacing: -0.02em;
+}
+.hero h1 em { font-style: italic; color: var(--color-primary); }
+.hero-sub {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* ── SECTIONS ── */
+.section {
+  padding: var(--space-20) var(--space-8);
+  max-width: 900px;
+  margin: 0 auto;
+}
+.section-alt {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.section-header {
+  max-width: 640px;
+  margin: 0 auto var(--space-12);
+  text-align: center;
+}
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: var(--space-4);
+}
+.section-header h2 em { font-style: italic; color: var(--color-primary); }
+.section-header p {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.65;
+}
+
+/* ── CARDS ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px,100%), 1fr));
+  gap: var(--space-4);
+}
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  transition: border-color 200ms, box-shadow 200ms;
+}
+.card:hover {
+  border-color: rgba(237,28,36,0.2);
+  box-shadow: 0 8px 32px rgba(237,28,36,0.04);
+}
+.card h3 {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+.card p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: var(--space-4);
+}
+.card a { display: inline-block; }
+
+/* ── QR CODES ── */
+.donate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px,100%), 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+.donate-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  text-align: center;
+}
+.donate-card h3 {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+.donate-card img {
+  max-width: 200px;
+  margin: 0 auto var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+.donate-card p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-3);
+  word-break: break-all;
+}
+.donate-card .address {
+  font-family: 'Courier New', monospace;
+  font-size: var(--text-xs);
+  color: var(--color-text);
+  background: var(--color-surface-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  word-break: break-all;
+  text-align: left;
+}
+
+/* ── REVIEW LINKS ── */
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+.review-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  transition: border-color 160ms, background 160ms;
+}
+.review-link:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-dim);
+}
+.review-link span { color: var(--color-text-muted); font-size: var(--text-xs); }
+
+/* ── FOOTER ── */
+footer {
+  padding: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  max-width: 900px; margin: 0 auto;
+}
+
+/* ── ADSENSE INLINE ADS ── */
+.ad-container {
+  margin: var(--space-8) auto;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--space-4);
+  text-align: center;
+  max-height: 520px;
+}
+.ad-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-2);
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  nav { padding: var(--space-4); }
+  #menuToggle { display: block !important; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    flex-direction: column;
+    padding: var(--space-4);
+    gap: var(--space-3);
+    z-index: 40;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: var(--space-2) 0; }
+  nav { position: relative; }
+  .hero { padding: var(--space-12) var(--space-5); }
+  .section { padding: var(--space-12) var(--space-4); }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-surface-3); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-label="RyzenZPilot">
+      <rect x="2" y="2" width="24" height="24" rx="4" stroke="#ed1c24" stroke-width="1.5" fill="none"/>
+      <path d="M14 9L19 14L14 19" stroke="#ed1c24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="9" y1="14" x2="19" y2="14" stroke="#ed1c24" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    RyzenZPilot
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="index.html#features">Features</a>
+    <a href="index.html#how-it-works">How it Works</a>
+    <a href="index.html#testimonials">Reviews</a>
+    <a href="index.html#overview">Overview</a>
+    <a href="index.html#setup">Setup</a>
+    <a href="index.html#discover">Discover</a>
+    <a href="support.html">Support</a>
+    <a href="RyzenZPilot-v3.1.5.zip" class="btn-primary">Download RyzenZPilot</a>
+    <button id="themeToggle" aria-label="Toggle light mode" style="background:none;border:none;color:var(--color-text-muted);cursor:pointer;font-size:var(--text-lg);padding:var(--space-2);">🌙</button>
+  </div>
+  <button id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks" style="display:none;background:none;border:none;color:var(--color-text);cursor:pointer;font-size:var(--text-xl);padding:var(--space-2);">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Support <em>RyzenZPilot.</em></h1>
+  <p class="hero-sub">
+    Join the community, share feedback, or help keep the project alive with a donation.
+  </p>
+</section>
+
+<!-- COMMUNITY -->
+<section class="section section-alt" id="community">
+  <div class="section-header">
+    <h2>Join the <em>community.</em></h2>
+    <p>Get help, share workflows, and talk to other RyzenZPilot users.</p>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Discord</h3>
+      <p>Ask questions, report bugs, and hang out with the RyzenZPilot community in real time.</p>
+      <a href="https://discord.gg/4QkQSfSATF" target="_blank" class="btn-outline">Join Discord</a>
+    </div>
+    <div class="card">
+      <h3>GitHub</h3>
+      <p>Open an issue or discussion to report bugs, share feedback, or follow development.</p>
+      <a href="https://github.com/Tetramatrix/RyzenZPilot" target="_blank" class="btn-outline">GitHub Feedback</a>
+    </div>
+    <div class="card">
+      <h3>Feedback on AlternativeTo</h3>
+      <p>Leave feedback on AlternativeTo to help others find RyzenZPilot.</p>
+      <a href="https://alternativeto.net/software/ryzenzpilot/" target="_blank" rel="noopener noreferrer" class="btn-outline">Leave feedback on AlternativeTo</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="section-header">
+    <h2>Leave a <em>review.</em></h2>
+    <p>If RyzenZPilot helps you, a review on any of these sites makes a big difference.</p>
+  </div>
+  <div class="review-list">
+    <a href="https://alternativeto.net/software/ryzenzpilot/" class="review-link" target="_blank" rel="noopener">
+      AlternativeTo <span>Read &amp; share →</span>
+    </a>
+    <a href="https://www.softpedia.com/get/System/File-Management/RyzenZPilot.shtml" class="review-link" target="_blank" rel="noopener">
+      Softpedia <span>Leave feedback →</span>
+    </a>
+    <a href="https://apps.microsoft.com/store/detail/XP8LNKJ7H4B1WS" class="review-link" target="_blank" rel="noopener">
+      Microsoft Store <span>View on Store →</span>
+    </a>
+  </div>
+</section>
+
+<!-- AD SPOT - Support Page -->
+<div class="ad-container">
+  <p class="ad-label">Sponsored</p>
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:468px;height:60px"
+       data-ad-client="ca-pub-6449563648591184"
+       data-ad-slot="9406329687"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- DONATE -->
+<section class="section section-alt" id="donate">
+  <div class="section-header">
+    <h2>Support <em>development.</em></h2>
+    <p>Donations help keep RyzenZPilot free, open, and actively maintained.</p>
+  </div>
+  <div class="donate-grid">
+    <div class="donate-card">
+      <h3>PayPal</h3>
+      <img src="qrcode.png" alt="PayPal QR code">
+      <p>Scan the QR code or send directly via PayPal.</p>
+      <a href="https://paypal.me/Gigamegs" target="_blank" rel="noopener" class="btn-outline">paypal.me/Gigamegs</a>
+    </div>
+    <div class="donate-card">
+      <h3>Bitcoin Cash (BCH)</h3>
+      <img src="bch_qrcode.png" alt="Bitcoin Cash QR code">
+      <p>Send BCH to the address below.</p>
+      <div class="address">bitcoincash:qrvhk77ujevd9n7jse4jewm99eg95at7tvc6m9v2vv</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>&copy; 2026 Tetramatrix. Specially optimized for AMD Ryzen systems.</span>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', function() {
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      links.classList.toggle('open');
+      toggle.textContent = expanded ? '☰' : '✕';
+    });
+  }
+  var themeBtn = document.getElementById('themeToggle');
+  var stored = localStorage.getItem('theme');
+  var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  var theme = stored || (prefersLight ? 'light' : 'dark');
+  document.documentElement.setAttribute('data-theme', theme);
+  if (themeBtn) {
+    themeBtn.textContent = theme === 'dark' ? '🌙' : '☀️';
+    themeBtn.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      themeBtn.textContent = next === 'dark' ? '🌙' : '☀️';
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

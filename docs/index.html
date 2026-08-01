@@ -1,476 +1,864 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <title>RyzenZPilot - 🚀 Intelligent Power Management for AMD Ryzen Systems</title>
-    <meta name="description" content="⚡ RyzenZPilot automatically optimizes your AMD Ryzen system performance. Save energy and maximize performance – fully automated from your system tray! 🎯">
-    <meta name="keywords" content="AMD Ryzen, Power Management, CPU Tuning, Performance Optimizer, Energy Saving, Gaming Performance, System Optimizer">
-    <meta name="author" content="Tetramatrix">
-    <meta property="og:title" content="RyzenZPilot - Intelligent Power Management for AMD Ryzen">
-    <meta property="og:description" content="⚡ Automatic performance and efficiency control for your Ryzen system directly from the system tray!">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/ryzen-zpilot-preview.jpg">
-    
-    <!-- Google Ads (using template IDs) -->
-    
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6449563648591184"
-         crossorigin="anonymous"></script>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <noscript><meta http-equiv="refresh" content="0; URL=https://tetramatrix.github.io/RyzenZPilot/"></noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="main.css">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6449563648591184"
+       crossorigin="anonymous"></script>
+
+  <title>RyzenZPilot - Intelligent Power Management for AMD Ryzen Systems</title>
+  <meta name="description" content="RyzenZPilot automatically optimizes your AMD Ryzen system performance. Save energy and maximize performance – fully automated from your system tray!">
+  <meta property="og:title" content="RyzenZPilot - Intelligent Power Management for AMD Ryzen">
+  <meta property="og:description" content="Automatic performance and efficiency control for your Ryzen system directly from the system tray!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tetramatrix.github.io/RyzenZPilot/">
+  <meta property="og:image" content="assets/ryzen-zpilot-preview.jpg">
+  <link rel="icon" type="image/png" href="RyzenZPilot.png">
+  <link rel="canonical" href="https://tetramatrix.github.io/RyzenZPilot/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0e0f11">
+  <link rel="stylesheet" href="main.css">
 </head>
-<body>
+<body id="main">
 
-<!-- Left Sidebar -->
-<div class="left">
-    <!-- Google Ads - Left Sidebar -->
-    <div class="fixed-nav">
-        
-        
-        <!-- bbrb -->
-        <p>
-        <ins class="adsbygoogle"
-            style="display:inline-block;width:160px;height:600px"
-            data-ad-client="ca-pub-6449563648591184"
-            data-ad-slot="8910195152"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        </p>
+<a href="#main" class="skip-link">Skip to main content</a>
 
-        <!-- bbrb 1.5 -->
-        <!--
-        <p style="padding-top:10px">
-        <ins class="adsbygoogle"
-            style="display:inline-block;width:160px;height:600px"
-            data-ad-client="ca-pub-6449563648591184"
-            data-ad-slot="4431879155"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script></p>
-        -->
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-label="RyzenZPilot">
+      <rect x="2" y="2" width="24" height="24" rx="4" stroke="#ed1c24" stroke-width="1.5" fill="none"/>
+      <path d="M14 9L19 14L14 19" stroke="#ed1c24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="9" y1="14" x2="19" y2="14" stroke="#ed1c24" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    RyzenZPilot
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How it Works</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#overview">Overview</a>
+    <a href="#setup">Setup</a>
+    <a href="support.html">Support</a>
+    <a href="#discover">Discover</a>
+    <a href="RyzenZPilot-v3.1.5.zip" class="btn-primary">Download RyzenZPilot</a>
+    <button id="themeToggle" aria-label="Toggle light mode" class="icon-btn">🌙</button>
+  </div>
+  <button id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks" class="icon-btn" style="display:none;">☰</button>
+</nav>
 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="badge-dot" style="background:var(--color-primary)"></span>
+    AMD Ryzen Power Management
+  </div>
+  <h1>Intelligent power.<br><em>Zero effort.</em></h1>
+  <p class="hero-sub">
+    RyzenZPilot brings intelligent power management to AMD Ryzen systems, enhancing both productivity and efficiency. It automatically switches power profiles based on active processes, dynamically manages performance, and integrates seamlessly into the system tray.
+  </p>
+  <div class="hero-actions">
+    <a href="RyzenZPilot-v3.1.5.zip" class="btn-primary">Download RyzenZPilot</a>
+    <a href="#features" class="btn-outline">See all features ↓</a>
+  </div>
+  <div class="hero-badge">
+    <span class="badge free"><span class="badge-dot"></span>Free for everyone</span>
+  </div>
+  <div class="showcase" style="padding:0;max-width:1100px;">
+    <div class="screenshot-wrap">
+      <img src="RyzenZPilot_3.1.3.png" alt="RyzenZPilot main interface showing Silent, Balanced, and Performance profiles" width="1140" height="820" fetchpriority="high">
     </div>
+    <div class="floating-badges">
+      <span class="badge free"><span class="badge-dot"></span> Silent</span>
+      <span class="badge cloud"><span class="badge-dot"></span> Balanced</span>
+      <span class="badge local"><span class="badge-dot"></span> Performance</span>
+    </div>
+    <p class="screenshot-caption">RyzenZPilot runs quietly in your system tray and automatically switches between Silent, Balanced, and Performance profiles.</p>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-number">3</span>
+      <span class="stat-label">Auto Profiles</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">All Gen</span>
+      <span class="stat-label">AMD Ryzen</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">1-Click</span>
+      <span class="stat-label">System Tray</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">$0</span>
+      <span class="stat-label">Free</span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how-it-works">
+  <div class="section-header">
+    <h2>How it <em>works.</em></h2>
+    <p>Three simple steps to automatic power management for your AMD Ryzen system.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <h3>Download</h3>
+      <p>Get RyzenZPilot-v3.1.5.zip from the official download page.</p>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <h3>Extract</h3>
+      <p>Extract all files to any folder on your system.</p>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <h3>Run as Admin</h3>
+      <p>Set compatibility to Administrator and start RyzenZPilot.exe.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUSTED BY -->
+<section class="section section-alt" id="testimonials">
+  <div class="section-header">
+    <h2>Trusted by the <em>community.</em></h2>
+    <p>Reviewed and recommended by publications and platforms across the software space.</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <img src="AlternativeTo.png" alt="AlternativeTo" class="testimonial-logo" loading="lazy" width="140" height="56">
+      <div class="testimonial-source">AlternativeTo</div>
+      <p class="testimonial-quote">"A powerful and user-friendly tool for managing AMD Ryzen processor power settings. Perfect for gamers and power users who want automatic profile switching."</p>
+      <a href="https://alternativeto.net/software/ryzenzpilot/" target="_blank" rel="noopener noreferrer" class="testimonial-link">Read more →</a>
+    </div>
+    <div class="testimonial-card">
+      <img src="softpedia.png" alt="Softpedia" class="testimonial-logo" loading="lazy" width="140" height="56">
+      <div class="testimonial-source">Softpedia</div>
+      <p class="testimonial-quote">"A reliable solution for AMD Ryzen power management with an intuitive interface and automatic profile detection. Lightweight and efficient."</p>
+      <a href="https://www.softpedia.com/get/System/File-Management/RyzenZPilot.shtml" target="_blank" rel="noopener noreferrer" class="testimonial-link">Read more →</a>
+    </div>
+    <div class="testimonial-card">
+      <img src="ms-store.svg" alt="Microsoft Store" class="testimonial-logo logo-light-bg" loading="lazy" width="140" height="56">
+      <div class="testimonial-source">Microsoft Store</div>
+      <p class="testimonial-quote">"Available on the Microsoft Store with easy installation and automatic updates. A must-have for any Ryzen system owner."</p>
+      <a href="https://apps.microsoft.com/store/detail/XP8LNKJ7H4B1WS" target="_blank" rel="noopener noreferrer" class="testimonial-link">View on Store →</a>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-source">Product Hunt</div>
+      <p class="testimonial-quote">"Featured on Product Hunt as an innovative power management tool for AMD Ryzen processors. Discover how RyzenZPilot can optimize your system."</p>
+      <a href="https://www.producthunt.com/products/ryzenzpilot" target="_blank" rel="noopener noreferrer" class="testimonial-link">View on Product Hunt →</a>
+    </div>
+  </div>
+</section>
+
+<!-- AD SPOT A -->
+<div class="ad-container">
+  <p class="ad-label">Sponsored</p>
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-6449563648591184"
+       data-ad-slot="8924662119"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-<!-- Right Sidebar -->
-
-
-<div class="right">
-    
-    <!-- bbrb 1.5 -->
-
-    <!--    
-    <p>
-    <ins class="adsbygoogle"
-        style="display:inline-block;width:160px;height:600px"
-        data-ad-client="ca-pub-6449563648591184"
-        data-ad-slot="4431879155"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    </p>
-    -->
-
-    <!-- Google Ads - Right Sidebar -->
-    
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6449563648591184"
-         data-ad-slot="8910195152"
-         data-ad-format="vertical"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    
-    <!-- Additional Ads at the bottom of right column -->
-    <!--
-    <div style="margin-top: 20px;">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-6449563648591184"
-             data-ad-slot="8910195152"
-             data-ad-format="rectangle"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+<!-- OVERVIEW -->
+<section class="section" id="overview">
+  <div class="section-header">
+    <h2>What is <em>RyzenZPilot?</em></h2>
+    <p>Intelligent power management for AMD Ryzen systems that runs quietly in the background.</p>
+  </div>
+  <div class="overview-grid">
+    <div class="overview-text">
+      <p><strong>RyzenZPilot brings intelligent power management to AMD Ryzen systems, enhancing both productivity and efficiency.</strong> It automatically switches power profiles based on active processes, dynamically manages performance, and integrates seamlessly into the system tray.</p>
+      <p>Built on the RyzenAdj library, RyzenZPilot provides a clean graphical interface for intuitive control of dynamic power management—all while running quietly in the background to optimize your processor's energy settings.</p>
+      <p><strong>No more manual power profile changes!</strong> RyzenZPilot continuously monitors your active processes and automatically selects the best performance mode for every situation.</p>
     </div>
-    -->
+    <div class="overview-video">
+      <video controls poster="RyzenZPilot_3.1.3.png">
+        <source src="RyzenZPilot.mp4" type="video/mp4">
+        Your browser does not support the video tag. Please download the file: <a href="RyzenZPilot.mp4" download>RyzenZPilot.mp4</a>
+      </video>
+    </div>
+  </div>
+  <div style="text-align: center; margin: var(--space-10) 0 0;">
+    <a href="RyzenZPilot-v3.1.5.zip" class="btn-primary">Download RyzenZPilot</a>
+    <p style="margin-top: var(--space-4); color: var(--color-text-muted); font-size: var(--text-sm); max-width: 600px; margin-left: auto; margin-right: auto;">
+      Some antivirus engines may temporarily flag RyzenZPilot due to heuristic, which is known as a 'false positive.' <a href="https://www.malwarebytes.com/blog/news/2017/09/explained-false-positives" target="_blank" rel="noopener noreferrer">Independent resources</a> explain why this happens and how to report it for correction. You can verify our builds on <a href="https://www.virustotal.com/gui/file/ecc95d8588f2abaebb28eac13b896424afd37d3b3f70e4c33e3ce58e440fb38d" target="_blank" rel="noopener noreferrer">VirusTotal</a> and, if needed, contact the affected vendors using their official false-positive channels. We continue to file submissions and monitor reclassifications.
+    </p>
+    <pre class="code-block-md5-highlight"><code>$ md5sum.exe RyzenZPilot-v3.1.5.exe d87000a75e875c36c6d6a2eb9d78d4d5</code></pre>
+  </div>
+</section>
+
+<!-- AD SPOT B -->
+<div class="ad-container">
+  <p class="ad-label">Sponsored</p>
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:468px;height:60px"
+       data-ad-client="ca-pub-6449563648591184"
+       data-ad-slot="6119369521"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-<!-- Main Content -->
-<div class="wikidoc">
-    <h1>🚀 RyzenZPilot</h1>
-    <h3>🔥 Your all-in-one solution for dynamic power management – right from your system tray! 💪</h3>
-
-    <p>
-        Boost your productivity and save energy: RyzenZPilot automatically switches between optimized power profiles based on your active applications. Whether gaming 🎮, video editing 🎬, or office work 📊 – your Ryzen system always runs in the perfect mode!
-    </p>
-
-    <p>
-        <img src="RyzenZPilot_3.1.3.png" alt="RyzenZPilot Screenshot" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 20px 0;">
-    </p>
-    
-    <!-- Video Section -->
-    <div style="text-align: center; margin: 30px 0;">
-        <h3>🎥 RyzenZPilot in Action</h3>
-        <video controls style="max-width: 100%; height: auto; border: 2px solid #ddd; border-radius: 10px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); background: #000;">
-            <source src="RyzenZPilot.mp4" type="video/mp4">
-            Ihr Browser unterstützt kein Video-Tag. Bitte laden Sie die Datei herunter: <a href="RyzenZPilot.mp4" download>RyzenZPilot.mp4 herunterladen</a>
-        </video>
-        <p style="margin-top: 15px; color: #666; font-size: 14px;">
-            📹 Sehen Sie, wie RyzenZPilot automatisch zwischen Leistungsprofilen wechselt
-        </p>
+<!-- WHY RYZENZPILOT -->
+<section class="section section-alt" id="why-ryzenzpilot">
+  <div class="section-header">
+    <h2>Why <em>RyzenZPilot?</em></h2>
+    <p>Common power management frustrations and how RyzenZPilot solves them.</p>
+  </div>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <h3>Manual switching between profiles</h3>
+      <p>RyzenZPilot switches automatically based on your active applications.</p>
     </div>
-    
-    <!-- Google Ads - Top Banner -->
-    <!--
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6449563648591184"
-         data-ad-slot="8910195152"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    -->
-
-    <!-- Download Section -->
-    <div style="text-align: center; margin: 20px 0;">
-        <!--
-        <a href="RyzenZPilot-v3.1.1.torrent" style="background: #ff4444; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin: 5px; display: inline-block;">📥 Download .torrent file now</a>
-        <a href="magnet:?xt=urn:btih:78b2fe8e20a0fb8f559a0a1eedf78285fd6ba6f9&dn=RyzenZPilot-v3.1.1.zip&tr=udp://tracker.openbittorrent.com:80/announce&tr=udp://tracker.opentrackr.org:1337/announce" style="background: #44ff44; color: black; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin: 5px; display: inline-block;">🧲 Download via Magnet-Link</a>
-        -->
-        <a href="RyzenZPilot-v3.1.5.zip" style="background: #4444ff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin: 5px; display: inline-block;">⬇️ Direct Download</a>
-
-        <p>Some antivirus engines may temporarily flag RyzenZPilot due to heuristic, which is known as a ‘false positive.’ <a href="https://www.malwarebytes.com/blog/news/2017/09/explained-false-positives" target="_blank">Independent resources</a> explain why this happens and how to report it for correction. You can verify our builds on <a href="https://www.virustotal.com/gui/file/ecc95d8588f2abaebb28eac13b896424afd37d3b3f70e4c33e3ce58e440fb38d" target="_blank">VirusTotal</a> and, if needed, contact the affected vendors using their official false‑positive channels. We continue to file submissions and monitor reclassifications.</p>
-
-      <pre style="background: #510370; padding: 10px; border-radius: 5px;"><code>
-        $ md5sum.exe RyzenZPilot-v3.1.5.exe d87000a75e875c36c6d6a2eb9d78d4d5</code></pre>
+    <div class="problem-card">
+      <h3>Complex configuration tools</h3>
+      <p>RyzenZPilot offers a clean graphical interface that anyone can use.</p>
     </div>
-    
-  
-    <h2>🤖 What is RyzenZPilot?</h2>
-    <p>
-        RyzenZPilot brings intelligent power management to AMD Ryzen systems, enhancing both productivity and efficiency. It automatically switches power profiles based on active processes, dynamically manages performance, and integrates seamlessly into the system tray.
+    <div class="problem-card">
+      <h3>Resource-hungry background apps</h3>
+      <p>RyzenZPilot is a lightweight system tray app with minimal footprint.</p>
+    </div>
+    <div class="problem-card">
+      <h3>No per-process rules</h3>
+      <p>Define ignored and overridden rules for specific applications and system processes.</p>
+    </div>
+    <div class="problem-card">
+      <h3>Difficult configuration</h3>
+      <p>Easy JSON config files let you customize profiles and settings without hassle.</p>
+    </div>
+    <div class="problem-card">
+      <h3>Gaming interruptions</h3>
+      <p>Zero latency switching ensures no frame drops or stuttering during gameplay.</p>
+    </div>
+    <div class="problem-card">
+      <h3>No visibility into active profile</h3>
+      <p>System tray integration gives you instant control and clear status indication.</p>
+    </div>
+    <div class="problem-card">
+      <h3>Expensive licenses</h3>
+      <p>RyzenZPilot is free for everyone. No subscriptions, no bloatware.</p>
+    </div>
+  </div>
+</section>
 
-        Built on the RyzenAdj library, RyzenZPilot provides a clean graphical interface for intuitive control of dynamic power management—all while running quietly in the background to optimize your processor’s energy settings.
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-header">
+    <h2>Core <em>features.</em></h2>
+    <p>Everything you need for intelligent AMD Ryzen power management.</p>
+  </div>
+  <div class="features-grid" id="topFeatures">
+    <div class="feature-card large">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <h3>Intelligent Autopilot</h3>
+      <p>Automatic switching between Silent, Balanced, and Performance profiles based on your active applications. RyzenZPilot continuously monitors your processes and selects the optimal power mode without any manual intervention.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+        </svg>
+      </div>
+      <h3>System Tray Integration</h3>
+      <p>Runs invisibly in the taskbar. One click gives you full control over your power profiles.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 21v-2"/><path d="M4 17V3"/><path d="M12 21v-6"/><path d="M12 11V3"/><path d="M20 21V13"/><path d="M20 9V3"/>
+        </svg>
+      </div>
+      <h3>Multi-Threading Architecture</h3>
+      <p>Responsive GUI plus a separate worker thread ensures the interface never blocks, even during heavy system monitoring.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+        </svg>
+      </div>
+      <h3>Per-Process Rules</h3>
+      <p>Define ignored and overridden rules for specific applications and system processes.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+      </div>
+      <h3>Easy Configuration</h3>
+      <p>Fully customizable profiles and settings via JSON config files. No complicated setup required.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+      </div>
+      <h3>Silent / Balanced / Performance</h3>
+      <p>Three optimized power profiles ready to use. Silent for idle, Balanced for everyday use, Performance for gaming and rendering.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/>
+        </svg>
+      </div>
+      <h3>RyzenAdj-based</h3>
+      <p>Built on the proven RyzenAdj library for direct, low-level access to AMD Ryzen power management registers.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+        </svg>
+      </div>
+      <h3>Portable No Install</h3>
+      <p>No installation, no registry entries, no system pollution. Extract and run from anywhere, even a USB stick.</p>
+    </div>
+    <div class="feature-card ad-card">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-format="fluid"
+           data-ad-layout-key="-7g+ex-1i-2s+ay"
+           data-ad-client="ca-pub-6449563648591184"
+           data-ad-slot="9713451440"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+  <div class="features-grid" id="moreFeatures" style="display:none;">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 3h7v7H3z"/><path d="M14 3h7v7h-7z"/><path d="M14 14h7v7h-7z"/><path d="M3 14h7v7H3z"/>
+        </svg>
+      </div>
+      <h3>Command Queue System</h3>
+      <p>Robust communication between threads without blocking. Commands are queued and processed safely across the GUI and worker threads.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 12h-4"/><path d="M2 12h4"/><path d="M12 2v4"/><path d="M12 22v-4"/><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/>
+        </svg>
+      </div>
+      <h3>Event-Driven Logic</h3>
+      <p>Responds immediately to system changes. Process start, stop, and state changes trigger instant profile updates.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+      </div>
+      <h3>Configurable Profiles</h3>
+      <p>PROFILE_COMMANDS and PROFILE_LEVELS are fully customizable via JSON. Create your own power profiles.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 21v-2"/><path d="M4 17V3"/><path d="M12 21v-6"/><path d="M12 11V3"/><path d="M20 21V13"/><path d="M20 9V3"/>
+        </svg>
+      </div>
+      <h3>Multi-Threading Architecture</h3>
+      <p>Technical deep-dive: GUI thread and worker thread communicate via thread-safe command queues and events.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/>
+        </svg>
+      </div>
+      <h3>Automated CI/CD</h3>
+      <p>Professional build pipeline with automated testing and releases. Every build is verified and checksummed.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+        </svg>
+      </div>
+      <h3>Portable Distribution</h3>
+      <p>Zip archive with no installer. Extract anywhere, run from USB, delete when done. Zero system impact.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin:var(--space-8) 0 var(--space-6);">
+    <button id="toggleFeatures" class="btn-outline" style="font-size:var(--text-sm);">6 more features ↓</button>
+  </div>
+  <div class="screenshot-strip">
+    <figure class="screenshot-card">
+      <img src="RyzenZPilot_3.1.3.png" alt="RyzenZPilot main interface" loading="lazy" width="640" height="400">
+      <figcaption>Main interface with profile indicators.</figcaption>
+    </figure>
+    <figure class="screenshot-card">
+      <img src="override.png" alt="Per-process rules configuration" loading="lazy" width="640" height="400">
+      <figcaption>Define ignored and overridden rules for specific processes.</figcaption>
+    </figure>
+    <figure class="screenshot-card">
+      <img src="RyzenZPilot.png" alt="RyzenZPilot system tray view" loading="lazy" width="640" height="400">
+      <figcaption>System tray integration with quick profile switching.</figcaption>
+    </figure>
+  </div>
+</section>
 
-        🧠 No more manual power profile changes! RyzenZPilot continuously monitors your active processes and automatically selects the best performance mode for every situation.
-    </p>
-
-    <h2>⭐ Core Features</h2>
-    <p>
-        `System Tray Integration` for full power management,
-    </p>
-    <p>
-        `Automatic Profile Detection` to intelligently switch power modes. This allows for operation that is 100% invisible to other applications.
-    </p>
-    
-    <ul>
-        <li>🎯 <b>Intelligent Autopilot:</b> Automatic switching between "Silent" 🤫, "Balanced" ⚖️, and "Performance" 🔥 profiles</li>
-        <li>📍 <b>System Tray Integration:</b> Runs invisibly in the taskbar – one click gives you full control!</li>
-        <li>⚡ <b>Multi-Threading Architecture:</b> Responsive GUI + separate worker thread for optimal system performance</li>
-        <li>🔧 <b>Per Process rules:</b> Define ignored & overridden rules for specific applications and system processes</li>
-        <li>⚙️ <b>Easy Configuration:</b> Fully customizable profiles & Settings via json config files</li>        
-    </ul>
-
-
-    <h2>🎯 Example Per Process Rules:</h2>
-    <p>
-        <img src="override.png" alt="RyzenZPilot Example Per Process Rules" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 20px 0;">
-    </p>
-
-
-    <!-- Google Ads - Middle -->
-    <!--
-    <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-layout="in-article"
-         data-ad-format="fluid"
-         data-ad-client="ca-pub-6449563648591184"
-         data-ad-slot="8910195152"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    -->
-
-    <h2>🎯 Who is RyzenZPilot Perfect For?</h2>
-    <p>
-        RyzenZPilot is designed for AMD Ryzen users who need a reliable tool for automatic power management, performance optimization, and energy efficiency. It integrates seamlessly with various applications, enhancing productivity by allowing intelligent profile switching without manual intervention. 💯
-    </p>
-    
-    <ul>
-        <li>🎮 <b>Gamers:</b> Full power as soon as a game starts – automatically back to energy saving when finished</li>
-        <li>🎬 <b>Content Creators:</b> Maximum performance for rendering, video editing, and streaming</li>
-        <li>💼 <b>Professionals:</b> Perfect balance between performance and energy efficiency for productive work environments</li>
-        <li>🏠 <b>Everyday Users:</b> Quiet, cool system for daily tasks + instant power reserves when needed</li>
-    </ul>
-
-    <h2>⚙️ How Does It Work?</h2>
-    <p>
-        <b>🎪 Fully automatic & invisible!</b> RyzenZPilot runs silently in the background and:
-    </p>
-    <ul>
-        <li>👁️ <b>Monitors active processes</b> in real-time</li>
-        <li>⚡ <b>Switches power profiles</b> without delay or interruption</li>
-        <li>📊 <b>Continuously optimizes</b> performance vs. temperature vs. noise</li>
-        <li>🔧 <b>Can be individually configured</b> for your specific needs</li>
-    </ul>
-
-    <h2>🏆 Why RyzenZPilot?</h2>
-    <p>
-        While other tools are complicated or resource-hungry, RyzenZPilot focuses on <b>elegance and efficiency</b>: 🎯
-    </p>
-    <ul>
-        <li>⚡ <b>Immediate Benefit:</b> Install, start, done – no complicated setup procedure</li>
-        <li>🔒 <b>Safe & Stable:</b> Professionally developed with multi-threading and robust error handling</li>
-        <li>🎮 <b>Gaming-Optimized:</b> Zero latency when switching profiles – no frame drops or stuttering</li>
-        <li>💰 <b>Free Power:</b> Enterprise features without license fees or subscriptions</li>
-        <li>🛡️ <b>No Bloatware:</b> Only the features you actually need</li>
-    </ul>
-
-    <!-- Google Ads - Middle Bottom -->
-    <!--
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6449563648591184"
-         data-ad-slot="8910195152"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    -->
-
-    <h2>🔧 Technical Features</h2>
-    <ul>
-        <li>🏗️ <b>Multi-Threading Architecture:</b> GUI thread + worker thread for optimal performance</li>
-        <li>📋 <b>Command Queue System:</b> Robust communication between threads without blocking</li>
-        <li>🔄 <b>Event-Driven Logic:</b> Responds immediately to system changes</li>
-        <li>⚙️ <b>Configurable Profiles:</b> PROFILE_COMMANDS & PROFILE_LEVELS fully customizable</li>
-    </ul>
-
-    <h2>💡 Installation & Setup</h2>
-    <p>
-        <b>🚀 4 simple steps to optimal Ryzen performance:</b>
-    </p>
-    <ol>
-        <li>📥 <b>Download:</b> Get the RyzenZPilot-v3.1.4.zip archive</li>
-        <li>🗜️ <b>Extract:</b> Extract all files to any folder</li>
-        <li>🛡️ <b>Set Permissions (Mandatory):</b> Right-click <code>RyzenZPilot.exe</code>, go to <b>Properties</b> &gt; <b>Compatibility</b>, and check <b>"Run this program as an administrator"</b>.</li>
-        <li>▶️ <b>Start:</b> Double-click RyzenZPilot.exe – done!</li>
-    </ol>
-
-    <h2>🌟 Why RyzenZPilot is the Best Choice</h2>
-    <p>
-        Unlike AMD Ryzen Master or other complex tools, RyzenZPilot focuses on what really matters: <b>🎯 Effortless, intelligent performance optimization without compromises!</b>
-    </p>
-    
-    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-        <tr style="background: #f8f9fa;">
-            <th style="padding: 12px; border: 1px solid #ddd;">Feature</th>
-            <th style="padding: 12px; border: 1px solid #ddd;">🏆 RyzenZPilot</th>
-            <th style="padding: 12px; border: 1px solid #ddd;">Other Tools</th>
+<!-- COMPARISON -->
+<section class="section section-alt" id="comparison">
+  <div class="section-header">
+    <h2>How <em>RyzenZPilot compares.</em></h2>
+    <p>The smart choice for AMD Ryzen power management.</p>
+  </div>
+  <div style="overflow-x: auto; display: block;">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>🏆 RyzenZPilot</th>
+          <th>Other Tools</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Automatic Detection</td>
+          <td class="win">Fully Automatic</td>
+          <td>Manual</td>
         </tr>
         <tr>
-            <td style="padding: 12px; border: 1px solid #ddd;">Automatic Detection</td>
-            <td style="padding: 12px; border: 1px solid #ddd;">✅ Fully Automatic</td>
-            <td style="padding: 12px; border: 1px solid #ddd;">❌ Manual</td>
-        </tr>
-        <tr style="background: #f8f9fa;">
-            <td style="padding: 12px; border: 1px solid #ddd;">System Integration</td>
-            <td style="padding: 12px; border: 1px solid #ddd;">✅ System Tray</td>
-            <td style="padding: 12px; border: 1px solid #ddd;">❌ Separate Windows</td>
+          <td>System Integration</td>
+          <td class="win">System Tray</td>
+          <td>Separate Windows</td>
         </tr>
         <tr>
-            <td style="padding: 12px; border: 1px solid #ddd;">Resource Usage</td>
-            <td style="padding: 12px; border: 1px solid #ddd;">✅ Minimal</td>
-            <td style="padding: 12px; border: 1px solid #ddd;">❌ High</td>
+          <td>Resource Usage</td>
+          <td class="win">Minimal</td>
+          <td>High</td>
         </tr>
-        <tr style="background: #f8f9fa;">
-            <td style="padding: 12px; border: 1px solid #ddd;">Gaming Performance</td>
-            <td style="padding: 12px; border: 1px solid #ddd;">✅ Zero Latency</td>
-            <td style="padding: 12px; border: 1px solid #ddd;">⚠️ Delays</td>
+        <tr>
+          <td>Gaming Performance</td>
+          <td class="win">Zero Latency</td>
+          <td>Delays</td>
         </tr>
+      </tbody>
     </table>
+  </div>
+</section>
 
-    <!-- Google Ads - Middle Article -->
-    <!--
-    <ins class="adsbygoogle"
-         style="display:block; text-align:center; margin: 20px 0;"
-         data-ad-layout="in-article"
-         data-ad-format="fluid"
-         data-ad-client="ca-pub-6449563648591184"
-         data-ad-slot="8910195152"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    -->
-
-    <!--
-    <h2>🚀 Practical Usage Examples</h2>
-    <p>
-        <b>💡 RyzenZPilot makes the difference in real scenarios:</b>
-    </p>
-    
-    <ul>
-        <li>🎮 <b>Gaming Session:</b> Cyberpunk 2077 starts → automatically "Performance" mode → maximum FPS</li>
-        <li>🎬 <b>Video Rendering:</b> Adobe Premiere runs → "High Performance" profile → 30% faster rendering</li>
-        <li>📝 <b>Office Work:</b> Word/Excel active → "Balanced" mode → quiet, cool, efficient</li>
-        <li>😴 <b>Idle/Break:</b> No active apps → "Silent" mode → minimal power consumption</li>
-        <li>🌙 <b>Night Time:</b> System on standby → automatic energy saving optimization</li>
-    </ul>
-    --> 
-
-    <h2>📋 System Requirements</h2>
-    <ul>
-        <li>💻 <b>CPU:</b> AMD Ryzen processor (all generations)</li>
-        <li>🪟 <b>OS:</b> Windows 10/11 (64-bit)</li>
-        <li>💾 <b>RAM:</b> Minimum 2GB</li>
-        <li>💽 <b>Storage:</b> ~50MB disk space</li>
-        <li>⚡ <b>Permissions:</b> Administrator privileges for power management</li>
-    </ul>
-
-    <h2>🔒 Security & Development</h2>
-    <p>
-        RyzenZPilot is developed with <b>🛡️ modern security standards</b>:
-    </p>
-    <ul>
-        <li>🔐 <b>MD5hash:</b> Double protection against bad actors</li>
-        <li>🏗️ <b>Professional Build Process:</b> Automated CI/CD pipeline</li>
-        <li>📦 <b>Portable Distribution:</b> No registry entries, no system pollution</li>
-    </ul>
-
-    <!-- Final Download Section -->
-    <div style="text-align: center; margin: 40px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 15px;">
-        <h3>🚀 Ready for the Future of Power Management? 🚀</h3>
-        <p style="font-size: 18px; margin: 15px 0;">Download RyzenZPilot now and experience how your Ryzen system reaches its full potential! 💫</p>
-        
-        <!--
-        <a href="RyzenZPilot-v3.1.1.torrent" style="background: #ff4444; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; margin: 10px; display: inline-block; font-weight: bold; font-size: 16px;">📥 Download .torrent file now</a>
-        <a href="magnet:?xt=urn:btih:78b2fe8e20a0fb8f559a0a1eedf78285fd6ba6f9&dn=RyzenZPilot-v3.1.1.zip&tr=udp://tracker.openbittorrent.com:80/announce&tr=udp://tracker.opentrackr.org:1337/announce" style="background: #44ff44; color: black; padding: 15px 30px; text-decoration: none; border-radius: 8px; margin: 10px; display: inline-block; font-weight: bold; font-size: 16px;">🧲 Download via Magnet-Link</a>
-        -->
-
-        <a href="RyzenZPilot-v3.1.5.zip" style="background: #4444ff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin: 5px; display: inline-block;">⬇️ Direct Download</a>
-    
-        <p>Some antivirus engines may temporarily flag RyzenZPilot due to heuristic, which is known as a ‘false positive.’ <a href="https://www.malwarebytes.com/blog/news/2017/09/explained-false-positives" target="_blank">Independent resources</a> explain why this happens and how to report it for correction. You can verify our builds on <a href="https://www.virustotal.com/gui/file/ecc95d8588f2abaebb28eac13b896424afd37d3b3f70e4c33e3ce58e440fb38d" target="_blank">VirusTotal</a> and, if needed, contact the affected vendors using their official false‑positive channels. We continue to file submissions and monitor reclassifications.</p>
-        
-        <pre style="background: rgba(0,0,0,0.3); color: #68d391; padding: 15px; border-radius: 8px; margin-top: 20px; text-align: left;">
-        <code>
-        $ md5sum.exe RyzenZPilot-v3.1.5.exe d87000a75e875c36c6d6a2eb9d78d4d5</code></pre>
-        
-    </div>
-        
-         <h2>🙏 Support & Donations</h2>
-         <p>💚 Donate  & support RyzenZPilot development!</p>
-            
-        <h3>⭐ If you like RyzenZPilot, please leave a positive review or star the project on <a href="https://alternativeto.net/software/ryzenzpilot/" target="_blank">AlternativeTo! ⭐</a></h3>
-
-
-						<h3>Join our Discord community</h3>
-            <div class="external-links">
-                <a href="https://discord.gg/4QkQSfSATF" target="_blank" class="btn btn-primary">RyzenZPilot Discord</a>
-            </div>
-
-
-        <h3>☕ Buy me a coffee or support via PayPal or Bitcoin Cash!</h3>       
-        <p style="float:right">
-            PayPal: paypal.me/Gigamegs
-            <img src="qrcode.png" alt="QR Code" style="width: 130px; height: 130px; vertical-align: middle; margin-left: 10px;">
-        </p>
-        <p>
-            📌 Bitcoin Cash (BCH)
-             <img src="bch_qrcode.png" alt="QR Code" style="width: 130px; height: 130px; vertical-align: middle; margin-left: 10px;"><br />
-            BCH Address: <br /> bitcoincash:qrvhk77ujevd9n7jse4jewm99eg95at7tvc6m9v2vv
-        </p>
-    <p>
-
-
-    <br />    
-    <br />
-
-    <h3>🔥 Featured on Product Hunt:</h3>
-
-    <p>
-
-    <a href="https://www.producthunt.com/products/ryzenzpilot?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-ryzenzpilot" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1023641&theme=dark&t=1760256869406" alt="RyzenZPilot - 🚀&#0032;Intelligent&#0032;power&#0032;management&#0032;for&#0032;Amd&#0032;Ryzen&#0032;systems | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-
-    </p>
-    
-
-        <div class="embed-container" style="height:405px !important">
-            <div class="embed-item" style="height:405px !important">
-            <iframe style="border: none;height:405px !important" src="https://cards.producthunt.com/cards/products/1114242" width="500" height="405" frameborder="0" scrolling="no" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    
-    <h3>🕹️ New Spaceship - Retro Mini Game:</h3>
-
-    <div class="embed-container">
-        <div class="embed-item">
-
-                <iframe frameborder="0" src="https://itch.io/embed/2985398?linkback=true&amp;bg_color=35fc00&amp;fg_color=3f2832&amp;link_color=fa5c5c&amp;border_color=ff5a1d" width="552" height="167"><a href="https://tetramatrix.itch.io/old-school-retro-mini-game-spaceship">Spaceship by tetramatrix</a></iframe>
-        </div>
-    </div>
-
-
-        <div class="embed-container">
-            <div class="embed-item">
-
-            <a href="https://www.indiedb.com/games/new-spaceship" title="View New Spaceship on IndieDB" target="_blank"><img src="https://button.indiedb.com/popularity/medium/games/86877.png" alt="New Spaceship" /></a>
-
-        </div>
-    </div>
-        
-        <h3>🧠 Aicono - Desktop Customization Tool:</h3>
-
-        <h4>🔥 Featured on Microsoft Store:</h4>
-		<p>
-			<a href="https://apps.microsoft.com/store/detail/XP8LNKJ7H4B1WS" target="_blank"><img src="ms-store.svg" width="100%" height="100%" alt="Get it from Microsoft" /></a>
-		</p>
-
-        <h4>🔥 Featured on Softpedia:</h4>
-        <p>
-            <a href="https://www.softpedia.com/get/Desktop-Enhancements/Other-Desktop-Enhancements/Aicono.shtml" target="_blank"><img src="softpedia.png" width="40%" height="40%" alt="Get it from Softpedia" /></a>
-        </p>
-
-        <h4>🔥 Featured on AlternativeTo:</h4>
-        <a href="https://alternativeto.net/software/aicono" title="Say goodbye to desktop chaos – Aicono uses cutting-edge AI to automatically group and arrange your icons" target="_blank"><img src="AlternativeTo.png" width="20%" alt="Aicono - Desktop Customization Tool" /></a>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    </p>    
-
-    <p style="text-align: center; color: #666; font-size: 14px; margin-top: 40px;">
-        🏢 Developed by <b>Tetramatrix</b> | 🔧 Specially optimized for AMD Ryzen systems | 💝 Free for everyone
-    </p>
-
+<!-- AD SPOT D -->
+<div class="ad-container">
+  <p class="ad-label">Sponsored</p>
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-6449563648591184"
+       data-ad-slot="8476391393"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-<!-- Google Analytics (optional) -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<!-- WHO USES -->
+<section class="section" id="who-uses">
+  <div class="section-header">
+    <h2>Built for <em>everyone.</em></h2>
+    <p>From casual users to professional gamers, RyzenZPilot adapts to your needs.</p>
+  </div>
+  <div class="audience-grid">
+    <div class="audience-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 9H4.5a2.5 2.5 0 010-5C7 4 8 7 8 7s1-3 3-3 3 3 3 3 1-3 3-3a2.5 2.5 0 010 5H18"/>
+          <path d="M12 12l2 2 4-4"/>
+        </svg>
+      </div>
+      <h3>Gamers</h3>
+      <p>Full power as soon as a game starts, automatically back to energy saving when finished.</p>
+    </div>
+    <div class="audience-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M23 7l-7 5-7-5-7 5V19a2 2 0 002 2h14a2 2 0 002-2z"/>
+        </svg>
+      </div>
+      <h3>Content Creators</h3>
+      <p>Maximum performance for rendering, video editing, and streaming workloads.</p>
+    </div>
+    <div class="audience-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 7h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM12 2h4v3h-4V2z"/>
+        </svg>
+      </div>
+      <h3>Professionals</h3>
+      <p>Perfect balance between performance and energy efficiency for productive work environments.</p>
+    </div>
+    <div class="audience-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <path d="M9 22V12h6v10"/>
+        </svg>
+      </div>
+      <h3>Everyday Users</h3>
+      <p>Quiet, cool system for daily tasks plus instant power reserves when needed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AD SPOT E -->
+<div class="ad-container">
+  <p class="ad-label">Sponsored</p>
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:336px;height:280px"
+       data-ad-client="ca-pub-6449563648591184"
+       data-ad-slot="8429838091"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- COMPATIBILITY -->
+<section class="compat-section" id="compatibility">
+  <p class="section-label">Compatible with all AMD Ryzen processors</p>
+  <div class="compat-grid">
+    <div class="compat-chip">Ryzen 1000 Series (Zen / Zen+)</div>
+    <div class="compat-chip">Ryzen 2000 Series (Zen+)</div>
+    <div class="compat-chip">Ryzen 3000 Series (Zen 2)</div>
+    <div class="compat-chip">Ryzen 5000 Series (Zen 3)</div>
+    <div class="compat-chip">Ryzen 7000 Series (Zen 4)</div>
+    <div class="compat-chip">Ryzen 7045 Series</div>
+    <div class="compat-chip">Ryzen 8045 Series</div>
+    <div class="compat-chip">Ryzen 8745 Series</div>
+    <div class="compat-chip">Ryzen 8845 Series</div>
+    <div class="compat-chip">Ryzen 8945 Series</div>
+    <div class="compat-chip">Ryzen 9000 Series (Zen 5)</div>
+    <div class="compat-chip">Ryzen 9000HX / HX3D Series</div>
+    <div class="compat-chip">Ryzen AI Max+ 300 / 400 Series</div>
+    <div class="compat-chip">Ryzen 7040 Series (Phoenix)</div>
+    <div class="compat-chip">Ryzen 8040 Series (Hawk Point)</div>
+    <div class="compat-chip">Ryzen AI 300 Series (Strix Point)</div>
+    <div class="compat-chip">Ryzen AI 400 Series (Gorgon Point)</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="section-header">
+    <h2>Simple <em>pricing.</em></h2>
+    <p>RyzenZPilot is fully free today. A planned premium option is coming for users who want extra support.</p>
+  </div>
+  <div class="pricing-grid" style="grid-template-columns:1fr;justify-items:center;">
+    <div class="pricing-card pricing-card--accent" style="max-width:380px;width:100%;">
+      <div class="pricing-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3 class="pricing-name">Free</h3>
+      <div class="pricing-price">$0</div>
+      <p class="pricing-desc">Unlimited use. No account, no trial clock.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOVER MORE APPS -->
+<section class="section section-alt" id="discover">
+  <div class="section-header">
+    <h2>Discover <em>more apps.</em></h2>
+    <p>Other tools from Tetramatrix for productivity, gaming, and AI-powered workflows.</p>
+  </div>
+  <div class="discover-grid">
+    <div class="discover-card">
+      <img src="aicono.png" alt="Aicono desktop icon organizer" loading="lazy" width="964" height="921">
+      <div class="discover-card-body">
+        <h3>Aicono</h3>
+        <p>AI Intelligent Desktop Icon Autopilot. Automatically organizes your cluttered Windows desktop using AI. Group icons intelligently, arrange them neatly.</p>
+        <div class="discover-links">
+          <a href="https://apps.microsoft.com/store/detail/9NGFC27J1VBX" target="_blank" rel="noopener">Microsoft Store</a>
+          <a href="https://www.softpedia.com/get/Desktop-Enhancements/Other-Desktop-Enhancements/Aicono.shtml" target="_blank" rel="noopener">Softpedia</a>
+          <a href="https://alternativeto.net/software/aicono" target="_blank" rel="noopener">AlternativeTo</a>
+          <a href="https://www.producthunt.com/products/aicono" target="_blank" rel="noopener">Product Hunt</a>
+        </div>
+      </div>
+    </div>
+    <div class="discover-card">
+      <img src="Sorana_Multi_Agent_Pipeline.png" alt="Sorana multi-agent pipeline screenshot" loading="lazy" width="1112" height="960">
+      <div class="discover-card-body">
+        <h3>Sorana</h3>
+        <p>Your personal AI knowledge workspace. A second brain that remembers your projects, learns your preferences, and finds any file or note instantly. Runs fully offline on Windows.</p>
+        <div class="discover-links">
+          <a href="https://github.com/Tetramatrix/Sorana" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="discover-card">
+      <img src="tabneuron.png" alt="TabNeuron AI spatial tab manager" loading="lazy" width="1149" height="1032">
+      <div class="discover-card-body">
+        <h3>TabNeuron</h3>
+        <p>AI Spatial Tab Manager &amp; Research Workspace. Maps browser tabs onto a 2D canvas, AI groups them by content, chat with any page or the live internet, deploy no-code research agents.</p>
+        <div class="discover-links">
+          <a href="http://tetramatrix.github.io/TabNeuron" target="_blank" rel="noopener">Website</a>
+          <a href="https://discord.gg/4QkQSfSATF" target="_blank" rel="noopener">Discord</a>
+          <a href="https://apps.microsoft.com/detail/9n8c43pzc1rn" target="_blank" rel="noopener">Microsoft Store</a>
+        </div>
+      </div>
+    </div>
+    <div class="discover-card large">
+      <div class="discover-card-body">
+        <h3>New Spaceship</h3>
+        <p>Retro Arcade 2D side-scroller bullet-hell shmup game. Free to play directly in your browser.</p>
+        <div class="embed-container" style="margin-top:var(--space-4);margin-bottom:var(--space-4);">
+          <div class="embed-item">
+            <iframe frameborder="0" src="https://itch.io/embed/2985398?linkback=true&bg_color=35fc00&fg_color=3f2832&link_color=fa5c5c&border_color=ff5a1d" width="552" height="167" loading="lazy">
+              <a href="https://tetramatrix.itch.io/old-school-retro-mini-game-spaceship">Spaceship by tetramatrix</a>
+            </iframe>
+          </div>
+        </div>
+        <div class="discover-links">
+          <a href="https://tetramatrix.itch.io/old-school-retro-mini-game-spaceship" target="_blank" rel="noopener">itch.io</a>
+          <a href="https://www.indiedb.com/games/new-spaceship" target="_blank" rel="noopener">IndieDB</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SETUP -->
+<section class="model-preview" id="setup">
+  <div class="model-preview-inner">
+    <div class="section-header" style="margin-bottom: var(--space-8);">
+      <h2>Get started in <em>minutes.</em></h2>
+      <p>Download, extract, and run. No installation required.</p>
+    </div>
+    <div class="setup-grid">
+      <div class="setup-card">
+        <h3>AMD Ryzen Processor</h3>
+        <p>Any AMD Ryzen processor (all generations from 1000 to 9000 series, plus Phoenix and Hawk Point).</p>
+      </div>
+      <div class="setup-card">
+        <h3>Windows 10 / 11</h3>
+        <p>64-bit Windows 10 or Windows 11 operating system.</p>
+      </div>
+      <div class="setup-card">
+        <h3>2 GB RAM</h3>
+        <p>Minimum 2 GB of system memory.</p>
+      </div>
+      <div class="setup-card">
+        <h3>50 MB Disk Space</h3>
+        <p>Approximately 50 MB of free disk space for the application.</p>
+      </div>
+      <div class="setup-card">
+        <h3>Administrator Privileges</h3>
+        <p>Administrator privileges are required for power management access.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AD SPOT F -->
+<div class="ad-container">
+  <p class="ad-label">Sponsored</p>
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:250px"
+       data-ad-client="ca-pub-6449563648591184"
+       data-ad-slot="3798779788"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <h2>Ready for intelligent power <em>management?</em></h2>
+  <p>Download RyzenZPilot now and experience automatic power optimization for your AMD Ryzen system. Free, lightweight, and always improving.</p>
+  <div class="cta-actions">
+    <a href="RyzenZPilot-v3.1.5.zip" class="btn-primary">Download RyzenZPilot</a>
+    <a href="https://github.com/Tetramatrix/RyzenZPilot" target="_blank" rel="noopener noreferrer" class="btn-outline">View on GitHub</a>
+  </div>
+  <p style="margin-top: var(--space-6); color: var(--color-text-muted); font-size: var(--text-sm); max-width: 600px; margin-left: auto; margin-right: auto;">
+    Some antivirus engines may temporarily flag RyzenZPilot due to heuristic, which is known as a 'false positive.' <a href="https://www.malwarebytes.com/blog/news/2017/09/explained-false-positives" target="_blank" rel="noopener noreferrer">Independent resources</a> explain why this happens and how to report it for correction. You can verify our builds on <a href="https://www.virustotal.com/gui/file/ecc95d8588f2abaebb28eac13b896424afd37d3b3f70e4c33e3ce58e440fb38d" target="_blank" rel="noopener noreferrer">VirusTotal</a> and, if needed, contact the affected vendors using their official false-positive channels. We continue to file submissions and monitor reclassifications.
+  </p>
+  <pre class="code-block-md5-highlight"><code>$ md5sum.exe RyzenZPilot-v3.1.5.exe d87000a75e875c36c6d6a2eb9d78d4d5</code></pre>
+</section>
+
+<!-- SUPPORT -->
+<section class="section section-alt" id="support">
+  <div class="section-header">
+    <h2>Need <em>help?</em></h2>
+    <p>Join the community, leave a review, or support the project.</p>
+  </div>
+  <div class="setup-grid">
+    <div class="setup-card">
+      <h3>Community</h3>
+      <p>Join the Discord server to ask questions, share workflows, and get help from other RyzenZPilot users.</p>
+      <a href="https://discord.gg/4QkQSfSATF" target="_blank" rel="noopener noreferrer" class="btn-outline" style="margin-top: var(--space-4);">Join Discord</a>
+    </div>
+    <div class="setup-card">
+      <h3>Feedback</h3>
+      <p>Have a question, suggestion, or bug report? Open a discussion or issue on GitHub.</p>
+      <a href="https://github.com/Tetramatrix/RyzenZPilot" target="_blank" rel="noopener noreferrer" class="btn-outline" style="margin-top: var(--space-4);">GitHub Feedback</a>
+    </div>
+    <div class="setup-card">
+      <h3>Support development</h3>
+      <p>Donations via PayPal or Bitcoin Cash help keep the project moving. Every bit helps!</p>
+      <a href="support.html" class="btn-outline" style="margin-top: var(--space-4);">Support &amp; Donate</a>
+    </div>
+    <div class="setup-card">
+      <h3>Feedback on AlternativeTo</h3>
+      <p>Leave feedback on AlternativeTo to help others discover RyzenZPilot.</p>
+      <a href="https://alternativeto.net/software/ryzenzpilot/" target="_blank" rel="noopener noreferrer" class="btn-outline" style="margin-top: var(--space-4);">AlternativeTo Feedback</a>
+    </div>
+  </div>
+</section>
+
+<noscript>
+  <div style="text-align:center;padding:var(--space-8);color:var(--color-text-muted);font-size:var(--text-sm);">
+    RyzenZPilot is free. If you find it useful, consider starring the project on GitHub.
+  </div>
+</noscript>
+
+<button id="backToTop" title="Back to top" aria-label="Back to top">↑</button>
+
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
+(function() {
+  'use strict';
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', function() {
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      links.classList.toggle('open');
+      toggle.textContent = expanded ? '☰' : '✕';
+    });
+  }
+  var themeBtn = document.getElementById('themeToggle');
+  if (themeBtn) {
+    var current = document.documentElement.getAttribute('data-theme') || 'dark';
+    themeBtn.textContent = current === 'dark' ? '🌙' : '☀️';
+    themeBtn.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      themeBtn.textContent = next === 'dark' ? '🌙' : '☀️';
+    });
+  }
+
+  /* Nav shadow on scroll */
+  var nav = document.querySelector('nav');
+  if (nav) {
+    var onScroll = function() { nav.classList.toggle('scrolled', window.scrollY > 10); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* Active nav link highlight */
+  var navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+  if (navAnchors.length && 'IntersectionObserver' in window) {
+    var sectionMap = {};
+    navAnchors.forEach(function(a) { sectionMap[a.getAttribute('href').slice(1)] = a; });
+    var activeObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        var link = sectionMap[entry.target.id];
+        if (!link) return;
+        if (entry.isIntersecting) {
+          navAnchors.forEach(function(a) { a.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    Object.keys(sectionMap).forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) activeObserver.observe(el);
+    });
+  }
+
+  /* Section reveal on scroll */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.section, .showcase').forEach(function(el) {
+      el.classList.add('reveal');
+      io.observe(el);
+    });
+  }
+
+  /* Back to top */
+  var btt = document.getElementById('backToTop');
+  if (btt) {
+    window.addEventListener('scroll', function() {
+      btt.classList.toggle('show', window.scrollY > 600);
+    }, { passive: true });
+    btt.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* Feature toggle */
+  var toggleBtn = document.getElementById('toggleFeatures');
+  var moreFeatures = document.getElementById('moreFeatures');
+  if (toggleBtn && moreFeatures) {
+    toggleBtn.addEventListener('click', function() {
+      var visible = moreFeatures.style.display !== 'none';
+      moreFeatures.style.display = visible ? 'none' : 'grid';
+      toggleBtn.textContent = visible ? '6 more features ↓' : 'Show fewer ↑';
+    });
+  }
+
+  /* Counter animation for stat numbers */
+  function animateCount(el, target, suffix) {
+    suffix = suffix || '';
+    var start = 0;
+    var duration = 900;
+    var startTime = null;
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(start + (target - start) * eased) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  document.querySelectorAll('.stat-number').forEach(function(el) {
+    var text = el.textContent;
+    if (text === '∞' || text === '100%' || text === 'All Gen' || text === '1-Click' || text === '$0') { /* keep as-is */ }
+    else if (/^\d+\+$/.test(text)) {
+      var num = parseInt(text, 10);
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateCount(el, num, '+');
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      observer.observe(el);
+    }
+  });
+})();
 </script>
--->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 Tetramatrix. Specially optimized for AMD Ryzen systems.</span>
+    <div class="footer-links">
+      <a href="#changelog">Changelog</a>
+      <a href="https://github.com/Tetramatrix/RyzenZPilot/issues" target="_blank" rel="noopener">GitHub Issues</a>
+      <a href="https://github.com/Tetramatrix/RyzenZPilot" target="_blank" rel="noopener">GitHub Repository</a>
+      <span class="footer-version">v3.1.5</span>
+    </div>
+    <div class="footer-discover">
+      Discover more apps: <a href="https://tetramatrix.github.io/Sorana">Sorana</a> · <a href="https://tetramatrix.github.io/new-spaceship">New Spaceship</a> · <a href="https://tetramatrix.github.io/TabNeuron">TabNeuron</a> · <a href="https://tetramatrix.github.io/Aicono">Aicono</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
